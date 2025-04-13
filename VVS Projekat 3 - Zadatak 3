@@ -1,0 +1,488 @@
+{
+	"info": {
+		"_postman_id": "631a6b3b-458c-4917-95b8-e53f2e0ef54e",
+		"name": "VVS Projekat 3",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "41262541"
+	},
+	"item": [
+		{
+			"name": "Search ~",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"// 1. Provera statusnog koda 200 (da stranica postoji)\r",
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"// 2. Provera da stranica sadrži poruku \"Rezultati nisu pronađeni za: ~\"\r",
+							"pm.test(\"Page contains 'Rezultati nisu pronađeni za: ~'\", function () {\r",
+							"    pm.expect(pm.response.text()).to.include(\"Rezultati \");\r",
+							"});\r",
+							"\r",
+							"// 3. Provera da stranica ne sadrži proizvode (ako nema rezultata)\r",
+							"pm.test(\"Page does not contain products\", function () {\r",
+							"    \r",
+							"  pm.expect(pm.response.text()).to.not.include(\"Proizvodi \");\r",
+							"});\r",
+							"\r",
+							"// 4. Provera da stranica sadrži HTML <title> tag (validacija strukture)\r",
+							"pm.test(\"Response time\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(1000);\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "",
+						"value": "",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://mistparfumerija.ba/?s=~&post_type=product",
+					"protocol": "https",
+					"host": [
+						"mistparfumerija",
+						"ba"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "~"
+						},
+						{
+							"key": "post_type",
+							"value": "product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Test",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response contains expected 'no results' message\", function () {\r",
+							"    const responseBody = pm.response.text();\r",
+							"    \r",
+							"    pm.expect(responseBody).to.include(\"Rezultati nisu pronađeni za:\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is acceptable\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000); // 3 seconds\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Basic HTML structure is present\", function () {\r",
+							"    const responseBody = pm.response.text();\r",
+							"    \r",
+							"    pm.expect(responseBody).to.include(\"<!DOCTYPE html>\");\r",
+							"    pm.expect(responseBody).to.include(\"<html\");\r",
+							"    pm.expect(responseBody).to.include(\"<head>\");\r",
+							"    pm.expect(responseBody).to.include(\"<body>\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"MiST specific elements are present\", function () {\r",
+							"    const responseBody = pm.response.text();\r",
+							"    \r",
+							"    pm.expect(responseBody).to.include(\"MiST Parfumerija\"); \r",
+							"    pm.expect(responseBody).to.include(\"mistparfumerija.ba\"); \r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mistparfumerija.ba/?s=~&post_type=product",
+					"protocol": "https",
+					"host": [
+						"mistparfumerija",
+						"ba"
+					],
+					"path": [
+						""
+					],
+					"query": [
+						{
+							"key": "s",
+							"value": "~"
+						},
+						{
+							"key": "post_type",
+							"value": "product"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Pagination",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Status code is 200\", function () {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Response time is acceptable\", function () {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(3000); // 3 seconds\r",
+							"});\r",
+							"\r",
+							"pm.test(\"MiST specific elements are present\", function () {\r",
+							"    const responseBody = pm.response.text();\r",
+							"    \r",
+							"    pm.expect(responseBody).to.include(\"MiST Parfumerija\"); \r",
+							"    pm.expect(responseBody).to.include(\"mistparfumerija.ba\"); \r",
+							"});\r",
+							"\r",
+							"pm.test(\"Testiranje pagination opcije\",function(){\r",
+							"    let responseBody = pm.response.text();\r",
+							"    \r",
+							"    pm.expect(responseBody.includes(\"Novo\"));\r",
+							"    pm.expect(responseBody.includes(\"Brendovi\"));\r",
+							"    pm.expect(responseBody.includes(\"Parfemi\"));\r",
+							"    pm.expect(responseBody.includes(\"Setovi\"));\r",
+							"})"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://mistparfumerija.ba/"
+			},
+			"response": []
+		},
+		{
+			"name": "Racun",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "CijenaProizvoda",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "KorpaPrazna",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Newsletter",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Korpa",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "MojRacun",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Registracija",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		},
+		{
+			"name": "Parfemi",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Statusni kod je 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Vrijeme odgovora je manje od 2 sekunde\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Stranica sadrži tekst koji se nalazi ispod 'Parfemi' naslova\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include(\"Zaronite u svijet čarobnih mirisa s našom pažljivo odabranom kolekcijom parfema. Svaka kap parfema predstavlja umjetničko djelo, stvoreno da probudi vaša osjetila i ostavi\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Lista proizvoda postoji\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include('class=\"row py-6 g-0\"');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://mistparfumerija.ba/kategorija/parfemi/"
+			},
+			"response": []
+		},
+		{
+			"name": "NemaMilitraze",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Statusni kod je 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Vrijeme odgovora je manje od 2 sekunde\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Stranica sadrži tekst 'Nisu pronađeni proizvodi koji odgovaraju vašem odabiru'\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include(\"Nisu pronađeni proizvodi koji odgovaraju vašem odabiru.\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Stranica sadrži tekst 'Pročitaj više'\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include(\"Pročitaj više\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mistparfumerija.ba/kategorija/parfemi/?filter_militraza=10ml",
+					"protocol": "https",
+					"host": [
+						"mistparfumerija",
+						"ba"
+					],
+					"path": [
+						"kategorija",
+						"parfemi",
+						""
+					],
+					"query": [
+						{
+							"key": "filter_militraza",
+							"value": "10ml"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Militraza15",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Statusni kod je 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Vrijeme odgovora je manje od 4 sekunde\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(4000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Stranica sadrži parfem od 15ml 'Giorgio Armani Si Passione EDP'\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include(\"Giorgio Armani Si Passione EDP\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Stranica je filtrirala 3 proizvoda\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include('<span class=\"\">3</span> proizvod/a');\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mistparfumerija.ba/kategorija/parfemi/?filter_militraza=15-ml",
+					"protocol": "https",
+					"host": [
+						"mistparfumerija",
+						"ba"
+					],
+					"path": [
+						"kategorija",
+						"parfemi",
+						""
+					],
+					"query": [
+						{
+							"key": "filter_militraza",
+							"value": "15-ml"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Najjeftiniji",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Statusni kod je 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Vrijeme odgovora je manje od 5 sekundi\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(5000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Prvi parfem na stranici je 'Bruno Banani Absolute Woman EDT'\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include(\"Bruno Banani Absolute Woman EDT\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Stranica sadrži tekst 'Pročitaj više'\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include(\"Pročitaj više\");\r",
+							"});\r",
+							""
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://mistparfumerija.ba/kategorija/parfemi/?orderby=price-asc",
+					"protocol": "https",
+					"host": [
+						"mistparfumerija",
+						"ba"
+					],
+					"path": [
+						"kategorija",
+						"parfemi",
+						""
+					],
+					"query": [
+						{
+							"key": "orderby",
+							"value": "price-asc"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Gucci",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"pm.test(\"Statusni kod je 200\", () => {\r",
+							"    pm.response.to.have.status(200);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Vrijeme odgovora je manje od 2 sekundi\", () => {\r",
+							"    pm.expect(pm.response.responseTime).to.be.below(2000);\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Prvi parfem na stranici je 'AKCIJA Gucci Flora Gorgeous Magnolia edp'\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include(\"AKCIJA Gucci Flora Gorgeous Magnolia edp\");\r",
+							"});\r",
+							"\r",
+							"pm.test(\"Stranica je filtrirala 25 proizvoda\", () => {\r",
+							"    let responseBody = pm.response.text();\r",
+							"    pm.expect(responseBody).to.include('<span class=\"\">25</span> proizvod/a');\r",
+							"});"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": "https://mistparfumerija.ba/brend/gucci/"
+			},
+			"response": []
+		}
+	]
+}

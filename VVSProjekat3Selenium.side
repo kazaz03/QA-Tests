@@ -1,0 +1,743 @@
+{
+  "id": "64444941-0bc6-4373-886e-dd678ef72b40",
+  "version": "2.0",
+  "name": "VVSProjekat3",
+  "url": "https://mistparfumerija.ba",
+  "tests": [{
+    "id": "9ba698e2-8006-4a6c-8ddd-7d33f9ce47d4",
+    "name": "Uspješna pretraga sa postojećim nazivom proizvoda",
+    "commands": [{
+      "id": "e2be6441-69d3-4d34-82c7-0aa685a13f3c",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bdba5fe9-15d0-40c7-9582-2af1d9dd5f44",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "782x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "af7e3084-8495-4aa4-b98d-9ba2a951cd41",
+      "comment": "",
+      "command": "click",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "fc3e561f-4251-42a8-9b89-acfb9d32a8d3",
+      "comment": "",
+      "command": "type",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "Versace Crystal Noir EDT"
+    }, {
+      "id": "2ab0eaf0-a8f2-482e-bcff-d32c2cd3e463",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "f1da24c4-b375-425e-b132-649c89b80b40",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.ms-md-3 > .mb-2",
+      "targets": [
+        ["css=.ms-md-3 > .mb-2", "css:finder"],
+        ["xpath=//section[@id='post-4089']/div/div/div/div/div[2]/div/h1", "xpath:idRelative"],
+        ["xpath=//h1", "xpath:position"],
+        ["xpath=//h1[contains(.,'Versace Crystal Noir EDT')]", "xpath:innerText"]
+      ],
+      "value": "Versace Crystal Noir EDT"
+    }]
+  }, {
+    "id": "70e7d734-6bc9-4e14-9f9b-b8c3c34879e5",
+    "name": "Uspješna pretraga za djelimični naziv proizvoda",
+    "commands": [{
+      "id": "f3467428-79ce-4985-a2c0-90081cd7653f",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c1bcd627-d719-4bdc-95ac-8115077c0e60",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "782x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "06df4eaf-32cf-4d9f-90e0-76e0d869b72c",
+      "comment": "",
+      "command": "click",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bc59b029-c740-4be5-a4db-de18cdbd7c70",
+      "comment": "",
+      "command": "type",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "Crystal Noir"
+    }, {
+      "id": "179b5b2a-cc89-4fb8-abf3-0f8fb7ea7836",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "cd658d2d-72f9-4d5a-909b-4a71203089f8",
+      "comment": "",
+      "command": "waitForElementPresent",
+      "target": "css=.container > h2",
+      "targets": [],
+      "value": "30000"
+    }, {
+      "id": "cb8c3640-0e17-4cd0-bba4-1009963f964a",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.container > h2",
+      "targets": [
+        ["css=.container > h2", "css:finder"],
+        ["xpath=//body/div[5]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Rezultati pretrage za: Crystal Noir')]", "xpath:innerText"]
+      ],
+      "value": "Rezultati pretrage za: Crystal Noir"
+    }, {
+      "id": "7c07526d-9769-40d0-a57d-761af0e0c5c1",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.py-2:nth-child(1)",
+      "targets": [
+        ["css=.py-2:nth-child(1)", "css:finder"],
+        ["xpath=//main[@id='main']/p", "xpath:idRelative"],
+        ["xpath=//main/p", "xpath:position"]
+      ],
+      "value": "Ukupno pronađeno 4 rezultata."
+    }]
+  }, {
+    "id": "748c6e92-6397-4940-ab85-890ba5dc73b4",
+    "name": "Neuspješna pretraga za nepostojeći naziv ",
+    "commands": [{
+      "id": "17bd1913-994d-4ddf-9b33-800dd3a41ad1",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "a83ebf1f-b10f-4441-b361-12ebb035eb11",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "782x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "bf493345-9e54-4eef-b728-59e05c1f4e51",
+      "comment": "",
+      "command": "click",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "17393c22-4654-4199-943d-96d88898d881",
+      "comment": "",
+      "command": "type",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "Amina"
+    }, {
+      "id": "01412792-4bc9-42f3-8b93-ea23e312da35",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "2b2aa79a-f2b3-492e-aa80-0e2aa45f8a43",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.container > h2",
+      "targets": [
+        ["css=.container > h2", "css:finder"],
+        ["xpath=//body/div[5]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Rezultati pretrage za: Amina')]", "xpath:innerText"]
+      ],
+      "value": "Rezultati nisu pronađeni za: Amina"
+    }]
+  }, {
+    "id": "23d16673-b7ff-469a-b4d7-26d5cfd9ba82",
+    "name": "Neuspješna pretraga za nasumični niz znakova",
+    "commands": [{
+      "id": "fc50b20f-f3f0-48a4-98f3-0683ed036065",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9d3d95b6-b7ec-4254-9f9f-550bfdf072a7",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "782x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "0a0de8ea-3f2a-4978-9909-cd77d80ad27c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.py-md-1",
+      "targets": [
+        ["css=.py-md-1", "css:finder"],
+        ["xpath=//nav[@id='main-header']/div", "xpath:idRelative"],
+        ["xpath=//nav/div", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "8298e25b-a6d9-4b90-a215-3d32d2697e04",
+      "comment": "",
+      "command": "click",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "990ab803-51dc-469b-8801-7b5746261aa0",
+      "comment": "",
+      "command": "type",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "cyz829"
+    }, {
+      "id": "5e20092c-a757-47b8-9731-479331fb7da4",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "f931b500-d3f4-4071-993c-1479b70c5825",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.container > .py-5",
+      "targets": [
+        ["css=.container > .py-5", "css:finder"],
+        ["xpath=//body/div[5]/h2", "xpath:position"],
+        ["xpath=//h2[contains(.,'Rezultati nisu pronađeni za: cyz829')]", "xpath:innerText"]
+      ],
+      "value": "Rezultati nisu pronađeni za: cyz829"
+    }]
+  }, {
+    "id": "aadb5273-a6e7-41fd-88b3-98171881b32a",
+    "name": "Neuspješna pretraga za prazan string\t",
+    "commands": [{
+      "id": "e396d985-52d8-4067-9c8d-f61b4f0616b2",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "6e44f06a-15a5-4602-9556-9dfca73e7b8c",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "782x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "68651370-2e93-4bd0-8bf7-c1bcf544ce2f",
+      "comment": "",
+      "command": "click",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "15f173de-f692-4aef-ae1b-d418d9142140",
+      "comment": "",
+      "command": "sendKeys",
+      "target": "id=custom-search-input-mobile",
+      "targets": [
+        ["id=custom-search-input-mobile", "id"],
+        ["css=#custom-search-input-mobile", "css:finder"],
+        ["xpath=//input[@id='custom-search-input-mobile']", "xpath:attributes"],
+        ["xpath=//form[@id='custom-search-form-mobile']/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/form/input", "xpath:position"]
+      ],
+      "value": "${KEY_ENTER}"
+    }, {
+      "id": "3dcd6fd6-1808-4141-ab3d-8b142665aac8",
+      "comment": "",
+      "command": "assertAlert",
+      "target": "",
+      "targets": [],
+      "value": "Morate unijeti nešta!"
+    }]
+  }, {
+    "id": "054299c6-d343-4931-b34f-50607da00968",
+    "name": "Dodavanje proizvoda u korpu",
+    "commands": [{
+      "id": "8e103685-469d-4768-b043-00e640030253",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4fa61895-e9e2-412b-b5d4-89fa4ec975fa",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1552x832",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "c4b7e839-eff2-42a1-8a41-c43f482d778c",
+      "comment": "",
+      "command": "click",
+      "target": "css=.nav-item:nth-child(7) > .nav-link",
+      "targets": [
+        ["css=.nav-item:nth-child(7) > .nav-link", "css:finder"],
+        ["xpath=(//a[contains(text(),'Make up')])[2]", "xpath:link"],
+        ["xpath=//div[@id='navbarCollapse']/ul/li[7]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://mistparfumerija.ba/kategorija/make-up')])[3]", "xpath:href"],
+        ["xpath=//li[7]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "13220a4d-51d4-4477-9118-208c25750c3c",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Lancome Idole Mascara set ( mascara 8 ml + BI-FACIAL cleanser 30 ml + Youth activating concentrate 10 ml)",
+      "targets": [
+        ["linkText=Lancome Idole Mascara set ( mascara 8 ml + BI-FACIAL cleanser 30 ml + Youth activating concentrate 10 ml)", "linkText"],
+        ["css=.col-6:nth-child(2) .mb-0 > .text-body", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lancome Idole Mascara set ( mascara 8 ml + BI-FACIAL cleanser 30 ml + Youth activating concentrate 10 ml)')])[2]", "xpath:link"],
+        ["xpath=//main[@id='main']/div[5]/div[2]/div/div/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://mistparfumerija.ba/proizvod/lancome-idole-mascara-set-mascara-8-ml-bi-facial-cleanser-30-ml-youth-activating-concentrate-10-ml/')])[4]", "xpath:href"],
+        ["xpath=//div[2]/div/div/div/div[2]/a", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "bdb47d34-aab1-41ff-b7fe-83b510cd0cde",
+      "comment": "",
+      "command": "click",
+      "target": "id=add-to-cart-btn",
+      "targets": [
+        ["id=add-to-cart-btn", "id"],
+        ["name=add-to-cart", "name"],
+        ["css=#add-to-cart-btn", "css:finder"],
+        ["xpath=//button[@id='add-to-cart-btn']", "xpath:attributes"],
+        ["xpath=//section[@id='post-15888']/div/div/div/div/div[2]/div/form/div/div[2]/div[2]/button", "xpath:idRelative"],
+        ["xpath=//div[2]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Dodaj u Korpu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "c47447ed-870a-44af-92e6-4c634db909e7",
+      "comment": "",
+      "command": "click",
+      "target": "id=pogledaj-korpu-btn",
+      "targets": [
+        ["id=pogledaj-korpu-btn", "id"],
+        ["linkText=Pogledaj korpu", "linkText"],
+        ["css=#pogledaj-korpu-btn", "css:finder"],
+        ["xpath=//a[contains(text(),'Pogledaj korpu')]", "xpath:link"],
+        ["xpath=//a[@id='pogledaj-korpu-btn']", "xpath:attributes"],
+        ["xpath=//div[@id='modalShoppingCart']/div[3]/div/div[2]/a", "xpath:idRelative"],
+        ["xpath=//a[contains(@href, 'https://mistparfumerija.ba/korpa/')]", "xpath:href"],
+        ["xpath=//div[2]/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Pogledaj korpu')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "f4e8d8c7-b56c-4427-9fef-74c03d6d86ce",
+      "comment": "",
+      "command": "assertText",
+      "target": "linkText=Lancome Idole Mascara set ( mascara 8 ml + BI-FACIAL cleanser 30 ml + Youth activating concentrate 10 ml)",
+      "targets": [
+        ["linkText=Lancome Idole Mascara set ( mascara 8 ml + BI-FACIAL cleanser 30 ml + Youth activating concentrate 10 ml)", "linkText"],
+        ["css=.mb-2 > .text-body", "css:finder"],
+        ["xpath=(//a[contains(text(),'Lancome Idole Mascara set ( mascara 8 ml + BI-FACIAL cleanser 30 ml + Youth activating concentrate 10 ml)')])[2]", "xpath:link"],
+        ["xpath=//ul[@id='cart-products']/li/div/div[2]/p/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, 'https://mistparfumerija.ba/proizvod/lancome-idole-mascara-set-mascara-8-ml-bi-facial-cleanser-30-ml-youth-activating-concentrate-10-ml/')])[4]", "xpath:href"],
+        ["xpath=//li/div/div[2]/p/a", "xpath:position"]
+      ],
+      "value": "Lancome Idole Mascara set ( mascara 8 ml + BI-FACIAL cleanser 30 ml + Youth activating concentrate 10 ml)"
+    }]
+  }, {
+    "id": "7f9e254f-5250-4e32-a7a4-cd182c6ecc6c",
+    "name": "Prazna korpa",
+    "commands": [{
+      "id": "7fe99694-172e-4f61-bdc1-319af5364c52",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "901c266d-3ed6-490e-98c7-3dd19d094e49",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "4971fa01-cc56-4222-8c4a-b508c5f260bb",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mist-icon-bag",
+      "targets": [
+        ["css=.mist-icon-bag", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "85aee76f-27e4-48e6-b640-ecc221e3bd49",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.fs-6:nth-child(2)",
+      "targets": [
+        ["css=.fs-6:nth-child(2)", "css:finder"],
+        ["xpath=//div[@id='modalShoppingCart']/p", "xpath:idRelative"],
+        ["xpath=//p", "xpath:position"],
+        ["xpath=//p[contains(.,'Tvoja korpa je prazna!')]", "xpath:innerText"]
+      ],
+      "value": "Tvoja korpa je prazna!"
+    }]
+  }, {
+    "id": "d4378195-04d4-41e4-9489-3b987a862588",
+    "name": "Uspješna registracija sa validnim podacima ",
+    "commands": [{
+      "id": "1dee2f5d-231e-4d5d-bfdf-7de8f043da34",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "9bec1d52-0225-432f-aa53-3579392d333d",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mist-icon-user path:nth-child(1)",
+      "targets": [
+        ["css=.mist-icon-user path:nth-child(1)", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "4d943c02-95c2-43e3-afa5-d849b83d3be9",
+      "comment": "",
+      "command": "mouseOver",
+      "target": "linkText=Račun",
+      "targets": [
+        ["linkText=Račun", "linkText"],
+        ["css=.me-n1 > .nav-link", "css:finder"],
+        ["xpath=//nav[@id='main-header']/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/moj-racun')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Račun')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "bba05d4d-d382-4e78-af21-1ab6261255de",
+      "comment": "",
+      "command": "mouseOut",
+      "target": "linkText=Račun",
+      "targets": [
+        ["linkText=Račun", "linkText"],
+        ["css=.me-n1 > .nav-link", "css:finder"],
+        ["xpath=//nav[@id='main-header']/div/ul/li/a", "xpath:idRelative"],
+        ["xpath=(//a[contains(@href, '/moj-racun')])[2]", "xpath:href"],
+        ["xpath=//li/a", "xpath:position"],
+        ["xpath=//a[contains(.,'Račun')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "5f049ddb-9260-4a57-878d-5656992c17b4",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Registracija",
+      "targets": [
+        ["linkText=Registracija", "linkText"],
+        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Registracija')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#registerTab')]", "xpath:href"],
+        ["xpath=//div/div/div/div/div/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Registracija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "e4d4a5e5-b530-4f8f-a35c-895e8947c19f",
+      "comment": "",
+      "command": "click",
+      "target": "id=reg_email",
+      "targets": [
+        ["id=reg_email", "id"],
+        ["name=email", "name"],
+        ["css=#reg_email", "css:finder"],
+        ["xpath=//input[@id='reg_email']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "953cc5f0-d081-4983-a2c0-f3bbb35ca9c0",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg_email",
+      "targets": [
+        ["id=reg_email", "id"],
+        ["name=email", "name"],
+        ["css=#reg_email", "css:finder"],
+        ["xpath=//input[@id='reg_email']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/form/div/input", "xpath:position"]
+      ],
+      "value": "korisnik896@gmail.com"
+    }, {
+      "id": "e5b6df30-e2a5-4e31-92c4-053f8d2609f4",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg_password",
+      "targets": [
+        ["id=reg_password", "id"],
+        ["css=#reg_password", "css:finder"],
+        ["xpath=//input[@id='reg_password']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "Lozinka45!"
+    }, {
+      "id": "7f4e4722-6887-4fc5-9129-ad9aafa0fe60",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-btn",
+      "targets": [
+        ["id=register-btn", "id"],
+        ["css=#register-btn", "css:finder"],
+        ["xpath=//button[@id='register-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registracija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "3016a6dc-7790-4954-822d-1357d8a6d7e9",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert-success",
+      "targets": [
+        ["css=.alert-success", "css:finder"],
+        ["xpath=//div[5]/div", "xpath:position"]
+      ],
+      "value": "Aktivirajte vaš račun klikom na link u e-mailu. Provjerite i spam. S nestrpljenjem iščekujemo vaše članstvo!"
+    }]
+  }, {
+    "id": "37b23414-8ebb-4ad9-9f05-1213756dfcf1",
+    "name": "Neuspješna registracija sa slabom lozinkom",
+    "commands": [{
+      "id": "b7f42b6f-c170-4346-9cf3-89744a0e73c8",
+      "comment": "",
+      "command": "open",
+      "target": "/",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "547c947c-619f-429b-8e04-d262e1e5efc8",
+      "comment": "",
+      "command": "setWindowSize",
+      "target": "1536x816",
+      "targets": [],
+      "value": ""
+    }, {
+      "id": "57b6f948-66fd-458a-9821-575f5a8bdc66",
+      "comment": "",
+      "command": "click",
+      "target": "css=.mist-icon-user",
+      "targets": [
+        ["css=.mist-icon-user", "css:finder"]
+      ],
+      "value": ""
+    }, {
+      "id": "bdd0eeca-9897-46b1-b86d-1d69b04d53c6",
+      "comment": "",
+      "command": "click",
+      "target": "linkText=Registracija",
+      "targets": [
+        ["linkText=Registracija", "linkText"],
+        ["css=.nav-link:nth-child(2)", "css:finder"],
+        ["xpath=//a[contains(text(),'Registracija')]", "xpath:link"],
+        ["xpath=//a[contains(@href, '#registerTab')]", "xpath:href"],
+        ["xpath=//div/div/div/div/div/div/a[2]", "xpath:position"],
+        ["xpath=//a[contains(.,'Registracija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "04eccb2d-aa6b-4f77-ad5a-9ecf8f5bdbdd",
+      "comment": "",
+      "command": "click",
+      "target": "id=reg_email",
+      "targets": [
+        ["id=reg_email", "id"],
+        ["name=email", "name"],
+        ["css=#reg_email", "css:finder"],
+        ["xpath=//input[@id='reg_email']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/form/div/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "b9b10b6e-8e1d-497f-b075-957deafb52ad",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg_email",
+      "targets": [
+        ["id=reg_email", "id"],
+        ["name=email", "name"],
+        ["css=#reg_email", "css:finder"],
+        ["xpath=//input[@id='reg_email']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/form/div/input", "xpath:position"]
+      ],
+      "value": "korisnik1@gmail.com"
+    }, {
+      "id": "6d7d6ffa-4018-4e87-a220-b9063671c729",
+      "comment": "",
+      "command": "click",
+      "target": "id=reg_password",
+      "targets": [
+        ["id=reg_password", "id"],
+        ["css=#reg_password", "css:finder"],
+        ["xpath=//input[@id='reg_password']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": ""
+    }, {
+      "id": "264e762f-d17a-4fd2-9bf3-0da8f062cb2d",
+      "comment": "",
+      "command": "type",
+      "target": "id=reg_password",
+      "targets": [
+        ["id=reg_password", "id"],
+        ["css=#reg_password", "css:finder"],
+        ["xpath=//input[@id='reg_password']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[2]/input", "xpath:idRelative"],
+        ["xpath=//div[2]/div/div/form/div[2]/input", "xpath:position"]
+      ],
+      "value": "l"
+    }, {
+      "id": "ba70e957-9547-421d-b68f-ebc545e53ced",
+      "comment": "",
+      "command": "click",
+      "target": "id=register-btn",
+      "targets": [
+        ["id=register-btn", "id"],
+        ["css=#register-btn", "css:finder"],
+        ["xpath=//button[@id='register-btn']", "xpath:attributes"],
+        ["xpath=//form[@id='register-form']/div[4]/button", "xpath:idRelative"],
+        ["xpath=//div[4]/button", "xpath:position"],
+        ["xpath=//button[contains(.,'Registracija')]", "xpath:innerText"]
+      ],
+      "value": ""
+    }, {
+      "id": "ffb5a75c-d04c-4a85-bfd4-a98bd7d07724",
+      "comment": "",
+      "command": "assertText",
+      "target": "css=.alert>div",
+      "targets": [],
+      "value": "Lozinka mora da ima barem 8 karaktera i specijalni simbol!"
+    }]
+  }],
+  "suites": [{
+    "id": "cfdb07b7-eb78-43ff-a846-18192dbbe586",
+    "name": "Default Suite",
+    "persistSession": false,
+    "parallel": false,
+    "timeout": 300,
+    "tests": []
+  }],
+  "urls": ["https://mistparfumerija.ba/"],
+  "plugins": []
+}
